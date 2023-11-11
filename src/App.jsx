@@ -1,21 +1,23 @@
-const Hello = (props) => {
-  console.log(props);
+ 
+import React from 'react';
+import Note from './components/Note';
+
+function App({notes}) {
   return (
-    <p>Hello {props.name} , you are {props.age}</p>
-  )
+    <>
+    <h1>Notes</h1>
+      
+      <ul>
+        {
+          notes.map(note => 
+            
+            <Note key={ note.id } note={ note } />
+          )
+        }
+      </ul> 
+   
+     </>)
 }
-
-
-function App() { 
-  const age = 25;
-
-  return (
-  <>
-   <h1>Greetings</h1>
-   <p>Hello Guest</p>
-   <Hello name ='sathish' age={10+20} />
-   <Hello name='Krish' age={age} />
-  </>)
-}
-
-export default App; 
+ 
+ export default App;
+ 
