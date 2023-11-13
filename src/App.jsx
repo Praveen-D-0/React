@@ -1,23 +1,27 @@
- 
-import React from 'react';
-import Note from './components/Note';
+import React, {useState} from 'react';
 
-function App({notes}) {
+function App() {
+
+
+  const [counter, setCounter] = useState(0);
+
+  setTimeout(() => {
+    setCounter(counter + 1);
+    }, 1000);
+  
+  
+  
+
+  console.log('rendering..', counter);
+
+
+
+
   return (
-    <>
-    <h1>Notes</h1>
-      
-      <ul>
-        {
-          notes.map(note => 
-            
-            <Note key={ note.id } note={ note } />
-          )
-        }
-      </ul> 
-   
-     </>)
+    <div>
+      App
+    </div>
+  )
 }
- 
- export default App;
- 
+
+export default App;
